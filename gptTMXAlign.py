@@ -10,7 +10,7 @@ import threading
 from datetime import datetime
 import sys
 import logging
-# pyinstaller --onefile --windowed --add-data "azure.tcl:." --add-data "theme:theme" tmxGUI4.py
+# pyinstaller --onefile --windowed --add-data "azure.tcl:." --add-data "theme:theme" gptTMXalign.py
 
 class CustomInputDialog(tk.Toplevel):
     def __init__(self, parent, title="", prompt=""):
@@ -349,8 +349,7 @@ class TMXGeneratorApp(tk.Tk):
             output_file = f"translation_memory_{os.path.basename(english_file_path)}_{os.path.basename(khmer_file_path)}.tmx"
             
             # Ensure the output directory exists
-            output_dir = "tmx_outputs"
-            os.makedirs(output_dir, exist_ok=True)
+            output_dir = self.output_directory
             output_file_path = os.path.join(output_dir, output_file)
             self.generated_tmx_files.append(output_file_path)
     
