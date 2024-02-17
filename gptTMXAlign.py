@@ -328,6 +328,7 @@ class TMXGeneratorApp(tk.Tk):
 
     def clear_file_pairs(self):
         self.file_pairs.clear()
+        self.generated_tmx_files = []
         self.file_pairs_list.delete(0, tk.END)
 
     def update_progress(self, current, total):
